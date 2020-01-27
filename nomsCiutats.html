@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http−equiv="content−type" content="text/html; charset=utf−8">
+		<title>nomsCiutats</title>
+		<script>
+		/* ENUNCIAT COMPLET:
+
+		*/
+		</script>
+
+
+
+		<script type="text/javascript">
+
+
+			function fases() {
+				//FASE 1
+				document.write ("FASE 1 ");
+				document.write ("<br>");
+        document.write ("------");
+				document.write ("<br>");
+				var ciutat1="";
+				var ciutat2="";
+				var ciutat3="";
+				var ciutat4="";
+				var ciutat5="";
+				var ciutat6="";
+
+				var ciutat1 = prompt("Introdueix la ciutat 1");
+				var ciutat2 = prompt("Introdueix la ciutat 2");
+				var ciutat3 = prompt("Introdueix la ciutat 3");
+				var ciutat4 = prompt("Introdueix la ciutat 4");
+				var ciutat5 = prompt("Introdueix la ciutat 5");
+				var ciutat6 = prompt("Introdueix la ciutat 6");
+
+
+				document.write (ciutat1 +" "+ ciutat2+ " "+ ciutat3 +" "+
+				ciutat4+" " +ciutat5+" " +ciutat6 );
+				document.write ("<br>");
+				document.write ("<br>");
+				//FASE 2
+				document.write ("FASE 2 ");
+				document.write ("<br>");
+        document.write ("------");
+				document.write ("<br>");
+			 	var arrayCiutats= [6];
+        arrayCiutats[0]=ciutat1;
+        arrayCiutats[1]=ciutat2;
+        arrayCiutats[2]=ciutat3;
+        arrayCiutats[3]=ciutat4;
+        arrayCiutats[4]=ciutat5;
+        arrayCiutats[5]=ciutat6;
+        var ciutatAux="";
+
+
+				for (var i = 0; i < arrayCiutats.length-1; i++) {
+
+
+					 for (var j = i + 1; j < arrayCiutats.length; j++) {
+
+
+
+							 if (arrayCiutats[i].localeCompare(arrayCiutats[j])>0){
+									 ciutatAux=arrayCiutats[i];
+									 arrayCiutats[i]=arrayCiutats[j];
+									 arrayCiutats[j]=ciutatAux;
+
+							 }
+
+					 }
+
+			 }
+			 //Metode implintat a la lliberia de Java:
+			 //Arrays.sort(arrayCiutats);
+
+				for (var i = 0; i < arrayCiutats.length; i++) {
+            document.write (arrayCiutats[i]+ " ");
+        }
+				document.write ("<br>");
+				document.write ("<br>");
+				//FASE 3
+				document.write ("FASE 3 ");
+				document.write ("<br>");
+        document.write ("------");
+				document.write ("<br>");
+				var ArrayCiutatsModificades=[];
+
+
+        for(var i=0; i< arrayCiutats.length; i++){
+
+            //Es canvia les vocals pel nombre 4 i es guarda al nou array.
+            ArrayCiutatsModificades[i]=arrayCiutats[i].replace(/a/g,"4");
+
+            document.write(ArrayCiutatsModificades[i]);
+						document.write ("<br>");
+        }
+				document.write ("<br>");
+				document.write ("<br>");
+				//FASE 4
+				document.write("FASE 4");
+				document.write ("<br>");
+				document.write ("------");
+				document.write ("<br>");
+
+        var lletres1 = [];
+        var lletres2= [];
+        var lletres3= [];
+        var lletres4= [];
+        var lletres5= [];
+        var lletres6= [];
+        var j=0;
+
+        // Enter j te el valor maxim de l'array de lletres.
+        j=ciutat1.length-1;
+        for (var i = 0; i < ciutat1.length; i++) {
+            //A la posicio 1 es guarda l'ultim caracter de la ciutat,
+            //al tenir j el valor maxim de l'array.
+            lletres1[i] = ciutat1.charAt(j);
+            document.write (lletres1[i] + " ");
+            //Es decrementa j una posicio per continuar escrivint la ciutat a la inversa.
+            j--;
+
+        }
+        document.write ("<br>");
+        j=ciutat2.length-1;
+        for (var i = 0; i < ciutat2.length; i++) {
+            lletres2[i] = ciutat2.charAt(j);
+            document.write (lletres2[i]+ " ");
+            j--;
+
+        }
+        document.write ("<br>");
+        j=ciutat3.length-1;
+        for (var i = 0; i < ciutat3.length; i++) {
+            lletres3[i] = ciutat3.charAt(j);
+            document.write (lletres3[i]+ " ");
+            j--;
+        }
+        j=ciutat4.length-1;
+        document.write ("<br>");
+        for (var i = 0; i < ciutat4.length; i++) {
+            lletres4[i] = ciutat4.charAt(j);
+            document.write (lletres4[i]+ " ");
+            j--;
+        }
+        document.write ("<br>");
+        j=ciutat5.length-1;
+        for (var i = 0; i < ciutat5.length; i++) {
+            lletres5[i] = ciutat5.charAt(j);
+            document.write (lletres5[i]+ " ");
+            j--;
+        }
+        document.write ("<br>");
+        j=ciutat6.length-1;
+        for (var i = 0; i < ciutat6.length; i++) {
+            lletres6[i] = ciutat6.charAt(j);
+            document.write (lletres6[i]+ " ");
+            j--;
+        }
+
+
+			}
+
+		</script>
+	</head>
+	<body>
+		<h1>FASES</h1>
+		<script type= "text/javascript">
+			fases();
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http−equiv="content−type" content="text/html; charset=utf−8">
+		<title>Restaurant</title>
+		<script>
+		/* ENUNCIAT COMPLET:
+    Exercici:
+    L’exercici consisteix a mostrar per consola una carta d’un restaurant on afegirem diferents plats i després
+    escollirem que volem per menjar. Un cop fet això s’haurà de calcular el preu del menjar el programa ens dirà
+    amb quins bitllets hem de pagar.
+
+    FASE 1 (2 punts)
+    ● Creeu una variable int per cada un dels bitllets que existeixen des de 5€ a 500€, haureu de crear un altre
+    variable per guardar el preu total del menjar. (1 punt)
+    ● Creeu dos arrays, un on guardarem el menú (5 plats) i un altre on guardarem el preu de cada
+    plat. (1 punt)
+
+
+    FASE 2 (3 punts)
+    ● Amb un bucle for haurem d’omplir els dos arrays anteriorment creats. Afegirem el nom del plat i després
+    el preu. (1 punt)
+    ● Un cop plens els dos arrays haurem de mostrar-los i preguntar que es vol per menjar, guardarem la
+    informació en una List fent servir un bucle while. (1 punt)
+    ● Haurem de preguntar si es vol seguir demanant menjar. Podeu fer servir el sistema (1:Si / 0:No), per tant
+    haureu de crear un altre variable int per guardar la informació. (1 punt)
+
+
+    FASE 3 (5 punts)
+    ● Un cop hem acabat de demanar el menjar, haurem de comparar la llista amb l’array que hem fet al
+    principi. En el cas que la informació que hem introduït a la List coincideixi amb la del array, haurem de
+    sumar el preu del producte demanat; en el cas contrari haurem de mostrar un missatge que digui que el
+    producte que hem demanat no existeix.
+		*/
+		</script>
+
+
+
+		<script type="text/javascript">
+			function fases() {
+				document.write ("<br>");
+				document.write ("<br>");
+        //FASE 1
+        var billet5=5,billet10=10,bitllet20=20,bitllet50=50,bitllet100=100,
+                bitllet200=200,bitllet500=500;
+        var plats= new Array(5);
+        var preus=new Array(5);
+        var j=0;
+        var i=0;
+        //FASE 2
+        document.write ("FASE 2 ");
+				document.write ("<br>");
+        document.write ("------");
+				document.write ("<br>");
+        var plat="";
+        var pregunta=-1;
+        var sumatori=0;
+        var esTroba=false;
+
+
+        for (var i ; i < plats.length; i++) {
+          plats[i]=prompt("Introdueix plat","");
+
+          preus[i]=prompt("Introdueix preu","");
+
+
+        }
+        document.write ("<br>");
+        document.write ("MENU");
+        document.write ("<br>");
+        document.write ("----");
+        document.write ("<br>");
+        for (var i = 0; i < plats.length; i++) {
+            document.write (plats[i] + " "+ preus[i]);
+            document.write ("<br>");
+
+        }
+        document.write ("<br>");
+        document.write ("<br>");
+        var comanda = new Array();
+        while(pregunta!=0){
+            pregunta=prompt("Vols demanar un plat? Si(1),No(0)");
+            if(pregunta==1){
+
+                plat=prompt("Digues quin plat vols");
+
+                comanda.push(plat);
+            }
+        }
+        //Bucle per mostrar comanda
+        /*for(var i = 0; i< comanda.length; i++){
+            document.write(comanda[i]);
+            document.write ("<br>");
+
+        }*/
+        //FASE 3
+        document.write ("FASE 3 ");
+				document.write ("<br>");
+        document.write ("------");
+				document.write ("<br>");
+
+        i=0;
+        while(i<comanda.length){
+
+              while((!esTroba) && (j<plats.length)){
+
+                  if((comanda[i].localeCompare(plats[j]))==0){
+                      esTroba=true;
+                      sumatori= +sumatori + +preus[j];
+                  }
+                  j++;
+              }
+
+              if(!esTroba){
+                  document.write ( comanda[i] + " no es troba al menu");
+                  document.write ("<br>");
+                  document.write ("<br>");
+              }
+              esTroba=false;
+              j=0;
+
+              i++;
+          }
+
+
+          document.write ("El compte es " + sumatori + " euros");
+
+
+
+
+				document.write ("<br>");
+
+
+			}
+
+		</script>
+	</head>
+	<body>
+		<h1>FASES</h1>
+    <script type= "text/javascript">
+	     fases();
+     </script>
+	</body>
+</html>
